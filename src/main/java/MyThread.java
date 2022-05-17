@@ -4,13 +4,12 @@ public class MyThread extends Thread {
         super(threadGroup, name);
     }
 
-
     @Override
     public void run() {
         try {
-            while (!isInterrupted()) {
+            while (true) {
                 Thread.sleep(2500);
-                System.out.println("Я " + Thread.currentThread().getName() + " Всем привет!");
+                System.out.println("Я поток" + Thread.currentThread().getName() + " Всем привет!");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
